@@ -33,7 +33,6 @@ registerRoute(
   request.destination === 'script' ||
   request.destination === 'worker',
   // ["style", "script", "worker"].includes(request.destination),
-  matchCallback,
   new StaleWhileRevalidate({
     cacheName: "asset-cache",
     plugins: [
