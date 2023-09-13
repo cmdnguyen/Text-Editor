@@ -1,4 +1,5 @@
 import { openDB } from 'idb';
+const { header } = require('./header')
 
 const initdb = async () =>
   openDB('jate', 1, {
@@ -29,7 +30,7 @@ export const getDb = async () => {
   const store = tx.objectStore('jate');
   const request = await store.get(1);
   const result = await request;
-  return result?.value || "No Data";
+  return result?.value || header;
 };
 
 initdb();
